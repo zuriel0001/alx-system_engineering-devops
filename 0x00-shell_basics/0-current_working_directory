@@ -1,2 +1,2 @@
 #!/bin/bash
-pwd
+echo "abs_path=$(pwd)"
