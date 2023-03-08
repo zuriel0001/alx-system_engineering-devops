@@ -1,4 +1,2 @@
 #!/bin/bash
-#Command for absolute path of the current working directory
-abs_path=$(pwd)
-echo "Your current working directory is: ${abs_path}"
+pwd
