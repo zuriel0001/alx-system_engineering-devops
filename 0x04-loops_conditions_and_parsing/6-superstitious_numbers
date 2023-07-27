@@ -6,7 +6,8 @@
 # Author: zuriel0001
 # Date: July 27, 2023
 ###########################################################
-count = "1"
+
+count = 1
 while [ $count -le 20 ]
 do
   case $count in
@@ -20,7 +21,7 @@ do
       echo "$count and then bad luck from Italy"
       ;;
     *)
-            echo $count
+            echo "$count"
       ;;
   esac
   ((count++))
