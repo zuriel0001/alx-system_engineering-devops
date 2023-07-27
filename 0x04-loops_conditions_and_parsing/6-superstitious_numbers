@@ -6,7 +6,6 @@
 # Author: Your Name
 # Date: July 27, 2023
 ###########################################################
-
 count=1
 while [ $count -le 20 ]
 do
@@ -26,4 +25,3 @@ do
   esac
   ((count++))
 done
-
