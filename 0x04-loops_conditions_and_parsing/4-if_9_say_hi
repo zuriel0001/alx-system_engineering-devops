@@ -2,7 +2,6 @@
 
 # This script is displaying "Best School" 10 times
 # On the 9th iteration, displays Best School and then Hi on a new line.
-
 i="0"
 while [ $i -lt 10 ]
 do
