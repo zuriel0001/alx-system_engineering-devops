@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 ###########################################################
 # Script: superstitious_numbers.sh
 # Description: Displays numbers from 1 to 20 and shows
