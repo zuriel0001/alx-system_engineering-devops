@@ -1,0 +1,23 @@
+#!/bin/env bash
+
+###########################################################
+# Script: hours_and_minutes.sh
+# Displays hours from 0 to 12 and minutes from 1 to 59 for each hour.
+# Author: zuriel001
+# Date: July 27, 2023
+###########################################################
+
+count=0
+while [ $count -le 12 ]
+do
+  echo "Hour: $count"
+  
+  minute=1
+  while [ $minute -le 59 ]
+  do
+    echo "$minute"
+    minute=$((minute+1))
+  done
+  
+  count=$((count+1))
+done
