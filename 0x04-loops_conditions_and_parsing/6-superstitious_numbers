@@ -6,23 +6,21 @@
 # Author: zuriel0001
 # Date: July 27, 2023
 ###########################################################
-
-count = 1
+count="1"
 while [ $count -le 20 ]
 do
-  case $count in
-    4)
-      echo "$count and then bad luck from China"
-      ;;
-    9)
-      echo "$count and then bad luck from Japan"
-      ;;
-    17)
-      echo "$count and then bad luck from Italy"
-      ;;
+case $count in
+    4) echo $count
+       echo "bad luck from China"
+    ;;
+    9) echo $count
+       echo "bad luck from Japan"
+    ;;
+    17)echo $count
+       echo "bad luck from Italy"
+    ;;
     *)
-            echo "$count"
-      ;;
-  esac
-  ((count++))
+	    echo $count
+esac
+count=$((count+1))
 done
