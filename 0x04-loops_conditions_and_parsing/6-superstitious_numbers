@@ -3,10 +3,10 @@
 # Script: superstitious_numbers.sh
 # Description: Displays numbers from 1 to 20 and shows
 # specific messages for the 4th, 9th, and 17th loop iterations.
-# Author: Your Name
+# Author: zuriel0001
 # Date: July 27, 2023
 ###########################################################
-count=1
+count = "1"
 while [ $count -le 20 ]
 do
   case $count in
