@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+###########################################################
+# Script: 8-beheaded_process
+# Description: Bash script that kills the process 7-highlander
+# Author: zuriel001
+# Date: July 28, 2023
+###########################################################
+pkill -f -SIGKILL 7-highlander
