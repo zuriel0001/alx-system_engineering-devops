@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
-
-#########################################
-# Script: hours_and_minutes.sh
-# Displays hours from 0 to 12 and minutes
-# from 1 to 59 for each hour.
-# Author: zuriel001
-# Date: July 27, 2023
-#########################################
+# A Bash script that displays the time for 12 hours and 59 minutes:
+#  display hours from 0 to 12
+#  display minutes from 1 to 59
 
 i="0"
 while [ $i -le 12 ]
