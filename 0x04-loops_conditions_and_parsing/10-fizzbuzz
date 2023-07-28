@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+###########################################################
+# Script: fizzbuzz
+# Description: Implements the FizzBuzz game for numbers from 1 to 100.
+#              - For multiples of 3, print "Fizz"
+#              - For multiples of 5, print "Buzz"
+#              - For multiples of both 3 and 5, print "FizzBuzz"
+# Author: zuriel001
+# Date: July 27, 2023
+###########################################################
+
+for i in {1..100}
+do
+if ((i % 15 == 0))
+    then
+    echo "FizzBuzz"
+elif ((i % 5 == 0))
+    then
+    echo "Buzz"
+elif (( i % 3 == 0))
+    then
+    echo "Fizz"
+else
+    echo "$i"
+fi
+done
