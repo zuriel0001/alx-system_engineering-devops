@@ -6,4 +6,4 @@
 # Author: zuriel001
 # Date: July 28, 2023
 ###########################################################
-pkill -f -SIGKILL 7-highlander
+pkill -SIGKILL -f "7-highlander"
