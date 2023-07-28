@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+###########################################################
+# Script: 67-stop_me_if_you_can.sh
+# Description: Stops the '7-highlander' process if it is running.
+# You cannot use kill or killall
+# Author: zuriel0001
+# Date: July 28, 2023
+###########################################################
+pkill -f 7-highlander

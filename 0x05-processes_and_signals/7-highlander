@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 ###########################################################
 # Script: to_infinity_and_beyond.sh
 # Description: Displays "To infinity and beyond indefinitely"
@@ -7,7 +6,7 @@
 #              It shows "I am invincible!!!" when receiving
 #              a SIGTERM signal.
 # Author: zuriel001
-# Date: July 27, 2023
+# Date: July 28, 2023
 ###########################################################
 
 while true; do
