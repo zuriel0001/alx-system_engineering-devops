@@ -1,6 +1,10 @@
 # Change the SSH Client config file
-exec { 'echo':
-  path    => 'usr/bin:/bin',
-  command => 'echo "    IdentityFile ~/.ssh/school\n    PasswordAuthentication no" >> /etc/ssh/ssh_config',
-  returns => [0,1],
+file { 'etc/ssh/ssh_config':
+	ensure => present,
+content =>"
+
+	# ssh host client configuration
+	host*
+  	IdentityFile ~/.ssh/school
+	PasswordAuthentication no
 }
