@@ -19,3 +19,12 @@ USERNAME=$3
 PATH_TO_SSH_KEY=$4
 
 scp -o StrictHostKeyChecking=no -i "$4" "$1" "$3@$2":~/
+
+# checking for transfer status
+#  this is not part of the task — jx optional
+if [ $? -eq 0 ]
+then
+	echo "Transfer Scuccesfull"
+else
+	echo "Transfee error, Try again"
+fi
