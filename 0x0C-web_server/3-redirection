@@ -5,5 +5,5 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 echo "Alx School" | sudo tee /var/www/html/index
-sudo sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://chat.openai.com/c/b72de180-b63d-40fd-8331-39b3663dc27c/ permanent;' /etc/nginx/sites-available/default
+sudo sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://github.com/zuriel0001/ permanent;' /etc/nginx/sites-available/default
 sudo service nginx restart
