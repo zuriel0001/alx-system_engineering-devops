@@ -1,7 +1,19 @@
-#!/usr/bin/env bash
-# Run Apache on the Holbertonschool/265-0 Docker container.
-# Error to be fixed
-#    curl: (52) Empty reply from server.
+FROM ubuntu:18.04
 
-echo "ServerName localhost" >> /etc/apache2.conf
-service apache2 start
+# Update package repositories and install Apache and PHP
+RUN apt-get update && \
+    apt-get install -y apache2 && \
+    apt-get install -y php && \
+    apt-get clean
+
+# Create a directory for the web page
+RUN mkdir /var/www/html/holberton
+
+# Create an index.php file with the desired content
+RUN echo "<?php echo 'Hello Holberton'; ?>" > /var/www/html/holberton/index.php
+
+# Expose port 80
+EXPOSE 80
+
+# Start Apache in the foreground
+CMD ["apache2ctl", "-D", "FOREGROUND"]
