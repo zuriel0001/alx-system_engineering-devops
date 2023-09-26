@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Run Apache on the Holbertonschool/265-0 Docker container.
+# Error to be fixed
+#    curl: (52) Empty reply from server.
+
+echo "ServerName localhost" >> /etc/apache2.conf
+service apache2 start
