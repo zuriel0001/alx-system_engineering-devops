@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Script to create MySQL server backup
+#  accept  one argument that is the password used to connect to the MySQL database
+
+PASS="$1"
+DATE=$(date +%d-%m-%Y)
+
+mysqldump -uroot -p"$PASS" --opt --all-databases > backup.sql
+
+tar -cvzf "$DATE".tar.gz backup.sql
