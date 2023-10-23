@@ -1,17 +1,37 @@
 #!/usr/bin/python3
-"""Returns to-do list information for a given employee ID
+
+"""
+    Returns to-do list information for a given employee ID
    The sceipt uses particular REST API.
 """
-import requests
-import sys
+
+from requests import get
+from sys import argv
+
 
 if __name__ == "__main__":
+    response = get('https://jsonplaceholder.typicode.com/todos/')
+    data = response.json()
+    completed = 0
+    total = 0
+    tasks = []
+    response2 = get('https://jsonplaceholder.typicode.com/users')
+    data2 = response2.json()
 
-    url = "https://jsonplaceholder.typicode.com/"
-    user = requests.get(url + "users/{}".format(sys.argv[1])).json()
-    todos = requests.get(url + "todos", params={"userId": sys.argv[1]}).json()
+    for j in data2:
+        if j.get('id') == int(argv[1]):
+            employee = j.get('name')
 
-    completed = [t.get("title") for t in todos if t.get("completed") is True]
-    print("Employee {} is done with tasks({}/{}):".format(
-        user.get("name"), len(completed), len(todos)))
-    [print("\t {}".format(c)) for c in completed]
+    for j in data:
+        if j.get('userId') == int(argv[1]):
+            total += 1
+
+            if j.get('completed') is True:
+                completed += 1
+                tasks.append(j.get('title'))
+
+    print("Employee {} is done with tasks({}/{}):".format(employee,
+                                                          completed, total))
+
+    for i in tasks:
+        print("\t {}".format(i))
