@@ -1,37 +1,34 @@
 #!/usr/bin/python3
-
-"""
-    Returns to-do list information for a given employee ID
-   The sceipt uses particular REST API.
+"""Request employee ID from API
 """
 
-from requests import get
+from json import load
+import requests
 from sys import argv
 
-
 if __name__ == "__main__":
-    response = get('https://jsonplaceholder.typicode.com/todos/')
-    data = response.json()
-    completed = 0
-    total = 0
-    tasks = []
-    response2 = get('https://jsonplaceholder.typicode.com/users')
-    data2 = response2.json()
 
-    for j in data2:
-        if j.get('id') == int(argv[1]):
-            employee = j.get('name')
+    def make_request(resource, param=None):
+        """Retrieve user from API
+        """
+        url = 'https://jsonplaceholder.typicode.com/'
+        url += resource
+        if param:
+            url += ('?' + param[0] + '=' + param[1])
 
-    for j in data:
-        if j.get('userId') == int(argv[1]):
-            total += 1
+        # make request
+        r = requests.get(url)
 
-            if j.get('completed') is True:
-                completed += 1
-                tasks.append(j.get('title'))
+        # extract json response
+        r = r.json()
+        return r
 
-    print("Employee {} is done with tasks({}/{}):".format(employee,
-                                                          completed, total))
+    user = make_request('users', ('id', argv[1]))
+    tasks = make_request('todos', ('userId', argv[1]))
+    tasks_completed = [task for task in tasks if task['completed']]
 
-    for i in tasks:
-        print("\t {}".format(i))
+    print('Employee {} is done with tasks({}/{}):'.format(user[0]['name'],
+                                                          len(tasks_completed),
+                                                          len(tasks)))
+    for task in tasks_completed:
+        print('\t {}'.format(task['title']))
