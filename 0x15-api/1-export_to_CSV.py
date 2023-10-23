@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Records all tasks that are owned by this employee
-Exports to-do list information for a given employee ID to CSV formait
+Exports to-do list information for a given employee ID to CSV format.
 """
 import csv
 import requests
