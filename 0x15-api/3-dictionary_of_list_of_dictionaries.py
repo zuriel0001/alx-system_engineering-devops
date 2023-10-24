@@ -15,5 +15,5 @@ if __name__ == "__main__":
                 "completed": tsk.get("completed"),
                 "username": u.get("username")
             } for tsk in requests.get(url + "todos",
-                                    params={"userId": u.get("id")}).json()]
+                                      params={"userId": u.get("id")}).json()]
             for u in users}, jsonfile)
