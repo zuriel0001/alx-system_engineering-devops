@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Returns to-do list information for a given employee ID
-   The sceipt uses particular REST API.
 """
 import requests
 import sys
