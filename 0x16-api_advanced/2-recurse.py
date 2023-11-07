@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """
-A function to query a list of all hot posts on a
-given Reddit subreddit
+A function to query a list of all hot posts on a given Reddit subreddit
 """
 
-import requestei
+import requests
 
 
 def recurse(subreddit, hot_list=[], after="", count=0):
@@ -23,7 +22,7 @@ def recurse(subreddit, hot_list=[], after="", count=0):
         "count": count,
         "limit": 100
     }
-    response = requests.get(url, headers=headeruu
+    response = requests.get(url, headers=headers,
                             params=params, allow_redirects=False)
 
     if response.status_code == 404:
