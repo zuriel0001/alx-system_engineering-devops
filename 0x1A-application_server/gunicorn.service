@@ -1,8 +1,10 @@
 [Unit]
+# about the instances
 Description=Gunicorn instance to serve application
 After=network.target
 
 [Service]
+# service user
 User=ubuntu
 Group=ubuntu
 WorkingDirectory=/home/ubuntu/AirBnB_clone_v4
