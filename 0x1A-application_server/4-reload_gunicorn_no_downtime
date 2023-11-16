@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 
 # Get the master pid of gunicorn
 masterpid=$(ps -C gunicorn -fch -o pid | head -n 1)
