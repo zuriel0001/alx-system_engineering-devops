@@ -27,6 +27,7 @@ server {
         # index index.html index.htm index.nginx-debian.html;
 
         server_name _;
+
         # serve /airbnb-onepage/ route on AirBNB_clone_v3
         location = /airbnb-onepage/ {
                 # First attempt to serve request as file, then
