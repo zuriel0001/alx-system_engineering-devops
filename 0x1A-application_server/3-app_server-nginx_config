@@ -1,5 +1,5 @@
-# Configures Nginx to serve the /number_odd_or_even/ route on AirBnB_clone_v2
-# Default server configuration                                                                                                                #
+# Default server configuration
+#
 server {
         add_header X-Served-By 311195-web-01;
         listen 80 default_server;
@@ -33,18 +33,16 @@ server {
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
                 proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
+                proxy_redirect off;
                 # try_files $uri $uri/ =404;
         }
 
         # Serve /number_odd_or_even/ route on AirBNB_clone_v2
         location ~ /airbnb-dynamic/number_odd_or_even/(\d+)$ {
             proxy_pass http://127.0.0.1:5001/number_odd_or_even/$1;
+            proxy_redirect off;
         }
 
-        # location /airbnb-dynamic/number_odd_or_even/ {
-        #        proxy_pass http://localhost:5001/number_odd_or_even/;
-        #        proxy_redirect off;
-        # }
         # pass PHP scripts to FastCGI server
         #
         #location ~ \.php$ {
@@ -70,5 +68,10 @@ server {
             internal;
         }
 
+        location /redirect_me {return 301 https://github.com/zuriel0001;}
+
+        location /hbnb_static {alias /data/web_static/current/;index index.html;}
         # location /hbnb_static {alias /data/web_static/current/;}
+
+        location @404 {return 404 "Ceci n'est pas une page\n";}
 }
